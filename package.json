@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://qevan91.github.io/portfolio-football",
+  "homepage": "https://qevan91.github.io/portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
