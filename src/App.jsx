@@ -1,11 +1,11 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPortfolio from './pages/MainPortfolio';
 import ProjectDetail from './pages/ProjectDetail';
 import Header from './components/Header';
 
 function App() {
     return (
-        <Router>
+        <Router basename={import.meta.env.BASE_URL}>
             <Header />
             <Routes>
                 <Route path="/" element={<MainPortfolio />} />
