@@ -193,14 +193,89 @@ main {
   font-weight: 600;
 }
 
-/* ABOUT */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.5rem; }
-.about-block { background: var(--card-bg); border: 1px solid var(--line); padding: 1.3rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); }
-.about-block h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--accent); letter-spacing: 1px; margin-bottom: 0.9rem; }
-.about-text { font-size: 0.83rem; color: rgba(0, 0, 0, 0.65); line-height: 1.8; }
-.timeline-item { gap: 0.9rem; margin-bottom: 0.9rem; font-size: 0.8rem; }
-.timeline-year { font-family: 'Space Mono', monospace; color: var(--accent); font-size: 0.6rem; min-width: 36px; padding-top: 2px; font-weight: bold; }
-.timeline-content { color: rgba(0, 0, 0, 0.65); line-height: 1.6; border-left: 1px solid var(--line); padding-left: 0.9rem; }
+/* --- ABOUT SECTION STYLES --- */
+
+.scouting-report {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.scouting-report h3 {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.career-block {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.career-block h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  color: #000;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.season-entry {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+  border-left: 1px solid var(--line);
+}
+
+.season-year {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: bold;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.season-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111a14;
+  margin-bottom: 0.2rem;
+}
+
+.season-club {
+  font-size: 0.8rem;
+  color: var(--data-blue);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.season-desc {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.season-desc b { color: #000; }
 
 /* GITHUB */
 .github-repos { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
