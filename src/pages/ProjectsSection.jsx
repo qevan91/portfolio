@@ -14,7 +14,7 @@ function ProjectDetail() {
             </h1>
 
             <div style={{ background: 'var(--card-bg)', padding: '2rem', marginTop: '2rem' }}>
-                <p>Ici tu pourras importer tes images et écrire ton analyse détaillée...</p>
+                <p></p>
             </div>
         </div>
     );

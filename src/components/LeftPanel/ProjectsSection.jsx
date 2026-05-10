@@ -54,6 +54,19 @@ export default function ProjectsSection() {
                         </div>
                     </div>
                 </Link>
+
+                {/* NOUVEAU PROJET F1 PREDICTOR */}
+                <Link to="/projet/f1-predictor" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <div className="project-card">
+                        <div className="project-number">05</div>
+                        <div className="project-tag">🏎️ Bot Discord</div>
+                        <div className="project-title">F1 Predictor Bot</div>
+                        <p className="project-desc">Développement d'un bot Discord automatisé en Python pour gérer les pronostics de Formule 1. L'objectif est de créer une expérience interactive pour la communauté, intégrant la récupération automatique des données via l'API Jolpi, un système de points avec multiplicateurs (évolutif) et une interface simplifiée utilisant les commandes slash (/) de Discord.</p>
+                        <div className="project-tech">
+                            <span className="tech-pill">Python</span><span className="tech-pill">discord.py</span><span className="tech-pill">API REST</span><span className="tech-pill">JSON</span>
+                        </div>
+                    </div>
+                </Link>
             </div>
         </div>
     );

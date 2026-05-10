@@ -249,9 +249,80 @@ const PokeboukContent = () => (
                 </a>
             </div>
             <div className="btn-group">
-                <a href="https://github.com/qevan91/pokebouk-shop" target="_blank" rel="noreferrer"
+                <a href="https://github.com/qevan91/PokeBouk" target="_blank" rel="noreferrer"
                    className="btn-github">
-                    Répo GitHub Privé
+                    Répo GitHub
+                </a>
+            </div>
+        </div>
+    </>
+);
+
+// F1 Predictor Bot
+const F1PredictorContent = () => (
+    <>
+        <h2 className="detail-section-title" style={{ marginTop: 0 }}>Vue d'ensemble</h2>
+        <p className="detail-text">
+            Développement d'un bot Discord automatisé en Python pour gérer les pronostics de Formule 1. L'objectif est de créer une expérience interactive pour la communauté, intégrant la récupération automatique des données via l'API Jolpi, un système de points évolutif et une interface simplifiée utilisant les commandes slash (/).
+        </p>
+
+        <h3 className="detail-section-title">Fonctionnalités Clés</h3>
+
+        <div className="tech-doc-grid">
+            <div className="tech-doc-card">
+                <h4 style={{ color: 'var(--accent)' }}>Pronostics & Automatisation</h4>
+                <ul className="tech-doc-list">
+                    <li><strong>Commandes Slash :</strong> Utilisation des commandes <code>/</code> Discord pour une
+                        expérience fluide et une réduction des erreurs de saisie.
+                    </li>
+                    <li><strong>API Jolpi :</strong> Récupération automatique des résultats officiels (Top 10 course,
+                        Qualifications, DNF).
+                    </li>
+                    <li><strong>Infos Grand Prix :</strong> Accès aux informations sur les Grands Prix et les pilotes
+                        directement via l'API.
+                    </li>
+                </ul>
+            </div>
+
+            <div className="tech-doc-card">
+                <h4 style={{color: 'var(--accent)'}}>Système de Points Avancé</h4>
+                <ul className="tech-doc-list">
+                    <li><strong>Multiplicateurs :</strong> Les points gagnés augmentent selon la précision et la hauteur
+                        de la position prédite.
+                    </li>
+                    <li><strong>Paris Spéciaux :</strong> Intégration de bonus annexes comme le Driver of the Day,
+                        l'apparition de la Safety Car et le pilote qui a le plus de dépassements.
+                    </li>
+                    <li><strong>Classement Dynamique :</strong> Leaderboard mis à jour automatiquement avec l'affichage
+                        des meilleurs joueurs et mentions des gagnants.
+                    </li>
+                </ul>
+            </div>
+
+            <div className="tech-doc-card">
+                <h4 style={{color: 'var(--accent)'}}>Administration Sécurisée</h4>
+                <ul className="tech-doc-list">
+                    <li><strong>Gestion des Rôles :</strong> Commandes réservées et filtrées selon les rôles Discord.</li>
+                    <li><strong>Panneau Admin :</strong> Validation automatique ou manuelle (au choix) des résultats, correction des scores et gestion des événements exceptionnels du week-end (DSQ).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div className="project-footer" style={{marginTop: '3rem'}}>
+            <div style={{flex: '1 1 300px'}}>
+                <h3 className="section-label" style={{marginBottom: '1rem'}}>Stack Technique</h3>
+                <div className="hero-tags">
+                    <span className="tag">Python</span>
+                    <span className="tag">discord.py</span>
+                    <span className="tag">Jolpi API</span>
+                    <span className="tag">python-dotenv</span>
+                    <span className="tag">JSON Storage</span>
+                </div>
+            </div>
+            <div className="btn-group">
+                <a href="https://github.com/qevan91/F1_Predictor_Bot_Saison_2026" target="_blank" rel="noreferrer"
+                   className="btn-github">
+                    Répo GitHub →
                 </a>
             </div>
         </div>
@@ -274,5 +345,9 @@ export const projectsData = {
     'pokebouk': {
         title: 'PokeBouk',
         content: <PokeboukContent />
+    },
+    'f1-predictor': {
+        title: 'F1 Predictor Bot - Saison 2026',
+        content: <F1PredictorContent />
     }
 };
