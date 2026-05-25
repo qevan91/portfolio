@@ -89,11 +89,85 @@ const WazeContent = () => (
 );
 
 const ScoutingContent = () => (
-    <div className="detail-text">
-        <p style={{fontSize: '1.1rem', marginBottom: '2rem'}}>
-            Projet toujours en cours de développement.
+    <>
+        <h2 className="detail-section-title" style={{ marginTop: 0 }}>Vue d'ensemble</h2>
+        <p className="detail-text">
+            Conception et développement d'un moteur de recommandation et de scoutisme basé sur la data.
+            L'algorithme permet de <strong>prédire les joueurs ayant un profil similaire</strong> à une cible donnée
+            (idéal pour remplacer un joueur en partance lors du mercato sans bousculer la tactique de l'équipe)
+            et d'identifier des opportunités de <strong>repositionnement tactique</strong> selon les attributs intrinsèques d'un joueur.
         </p>
-    </div>
+
+        <h3 className="detail-section-title">Architecture Data Pipeline (Médaillon)</h3>
+        <ul className="medallion-list">
+            <li className="medallion-item bronze">
+                <strong style={{color: '#cd7f32'}}>1. Bronze (Données Brutes)</strong>
+                Collecte et isolation des données brutes multi-sources : flux JSON granulaires issus de <strong>SofaScore</strong> et tables statistiques standards extraites de <strong>FBref</strong>.
+            </li>
+            <li className="medallion-item silver">
+                <strong style={{color: '#7f8c8d'}}>2. Argent (Conformed & Merged)</strong>
+                Nettoyage des valeurs manquantes, typage strict, alignement des entités joueurs via un algorithme de réconciliation textuelle (<strong>Fuzzy Matching</strong>) et jointure des deux univers de données.
+            </li>
+            <li className="medallion-item gold">
+                <strong style={{color: '#d4af37'}}>3. Gold (Business / ML Ready)</strong>
+                Normalisation volumétrique au prorata du temps de jeu (<strong>Calcul Per 90</strong>), encodage des postes pour le filtrage et structuration des features en 4 grands axes de performance pour le Clustering.
+            </li>
+        </ul>
+
+        <h3 className="detail-section-title">Ingénierie des Données & Pipeline</h3>
+        <div className="tech-doc-grid">
+            <div className="tech-doc-card">
+                <h4>1. Ingestion & Sources (Bronze)</h4>
+                <ul className="tech-doc-list">
+                    <li>Multi-sourcing pour pallier le manque de données avancées (SofaScore compense l'absence de passes progressives de FBref standard).</li>
+                    <li>Stockage isolé des structures de données hétérogènes (JSON vs Tableur).</li>
+                </ul>
+            </div>
+            <div className="tech-doc-card">
+                <h4>2. Nettoyage & Réconciliation (Silver)</h4>
+                <ul className="tech-doc-list">
+                    <li><strong>Fuzzy Name Resolution :</strong> Algorithme d'alignement pour faire correspondre un joueur dont l'orthographe varie d'une plateforme à l'autre.</li>
+                    <li>Gestion stricte des types de données et imputation/filtrage des valeurs `NA`.</li>
+                    <li>Jointure consolidée pour créer un profil statistique unique par joueur.</li>
+                </ul>
+            </div>
+            <div className="tech-doc-card">
+                <h4>3. Règle d'Or Métier & Feature Engineering (Gold)</h4>
+                <ul className="tech-doc-list">
+                    <li><strong>Normalisation Per 90 :</strong> Transformation de toutes les statistiques de volume selon la formule mathématique rigoureuse : <br/>
+                        <code>Stat_90 = (Stat_brute / Minutes_jouées) * 90</code>.</li>
+                    <li>Isolation des variables de filtrage non-linéaires (Âge, Postes détaillés).</li>
+                </ul>
+            </div>
+            <div className="tech-doc-card">
+                <h4>4. Modélisation & Clustering (À venir)</h4>
+                <ul className="tech-doc-list">
+                    <li>Préparation des matrices de features prêtes pour des algorithmes de type K-Means, DBSCAN ou GMM.</li>
+                    <li>Segmentation par profil de performance (Création, Danger Offensif, Impact Défensif, Profil Physique).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div className="project-footer" style={{marginTop: '3rem'}}>
+            <div style={{flex: '1 1 300px'}}>
+                <h3 className="section-label" style={{marginBottom: '1rem'}}>Stack Technique</h3>
+                <div className="hero-tags">
+                    <span className="tag">Python</span>
+                    <span className="tag">SQL</span>
+                    <span className="tag">FuzzyWuzzy (Data Matching)</span>
+                    <span className="tag">Machine Learning (Clustering)</span>
+                    <span className="tag">BigQuery</span>
+                    <span className="tag">Data Lake (Médaillon)</span>
+                </div>
+            </div>
+            <div className="btn-group">
+                <a href="https://github.com/qevan91/Similarity_Player" target="_blank" rel="noreferrer"
+                   className="btn-github">
+                    Répo GitHub →
+                </a>
+            </div>
+        </div>
+    </>
 );
 
 // OCR Grand Paris Sud

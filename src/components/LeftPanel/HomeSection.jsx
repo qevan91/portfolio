@@ -38,7 +38,6 @@ export default function HomeSection() {
                     }}>Bases de données :</span>
                     <span className="tag">PostgreSQL</span><span className="tag">MySQL</span>
                     <span className="tag">MongoDB</span><span className="tag">Supabase</span>
-                    <span className="tag">BigQuery</span><span className="tag">BigQuery</span>
                     <span className="tag">BigQuery</span><span className="tag">SQLite</span>
                 </div>
 
